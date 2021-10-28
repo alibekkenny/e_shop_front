@@ -154,7 +154,6 @@
         gap-5
       "
     >
-      <!--Card 1-->
       <div
         v-for="product in products"
         :key="product.id"
@@ -164,7 +163,8 @@
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">{{ product.title }}</div>
           <p class="text-gray-700 text-base">Цена: ${{ product.price }}</p>
-        </div>
+        </div> 
+        <nuxt-link :to="'/product/' + product.id">
         <button
           class="
             relative
@@ -174,14 +174,14 @@
             py-2
             float-right
             rounded
-            font-bold
-            overflow-hidden
             mr-4
             mb-3
           "
         >
+       
           Подробнее
         </button>
+          </nuxt-link>
       </div>
     </div>
   </div>
